@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div id="post_body">
+    <div class="individual_post">
+        <img src="{{ url_for('static', filename='img/' + post.image_file) }}" width="250">
+        <h2 class="post_title">"{{ post.title }}"</h2>
+        <p class="detailed_description">{{ post.detailed_description }}</p>
+    </div>
+
+    <div class="comments">
+        <h2>Comments</h2>
+        {% for comment in comments %}
+            <div class="individual_comment">
+                <div class="reviewer_information">
+                    <p class="reviewer_name">{{ comment.visitor.first_name }}</p>
+                    <p class="timestamp">{{ comment.timestamp }}</p>
+                </div>
+                <div class="rating_and_comments">
+                    <p class="post_rating">
+                        {% for i in range(comment.rating) %}
+                            <img src="{{ url_for('static', filename='img/star.png') }}" width="20">
+                        {% endfor %}
+                    </p>
+                    <p class="comment_text">{{ comment.content }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="comment_form">
+        {% if current_user.is_authenticated %}
+        <h3>Wanna leave a reply? Post your own comment right now!</h3>
+        <form method="POST" action="">
+            {{ form.csrf_token }}
+            <p>
+                {{ form.rating.label}}
+                {% for subfield in form.rating %}
+                    <tr>
+                    <td>{{ subfield }}</td>
+                    <td>{{ subfield.label }}</td>
+                    </tr>
+                {% endfor %}
+            </p>
+            <p>{{ form.comment(cols="100", rows="10") }}</p>
+            <p><input type="submit" value="Post"></p>
+        </form>
+        {% else %}
+        <h3>Wanna leave a reply? <a href="{{ url_for('login') }}" id="login">Log in</a> right now!</h3>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock content %}

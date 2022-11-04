@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>Welcome to Keyou Song personal blog!</h1>
+<div class="date_order">
+    <form method="POST" action="">
+        {{ form.csrf_token }}
+        <p>{{ form.date_order.label }} {{ form.date_order }} <input type="submit" value="Confirm"></p>
+    </form>
+</div>
+
+<div class="blog_post">
+{% for post in posts %}
+    <div class="each_post">
+        <a href="{{ url_for('post', post_id=post.id) }}"><img src="{{ url_for('static', filename='img/' + post.image_file) }}" width="200">
+        <h2 class="post_title">"{{ post.title }}"</a></h2>
+        <p class="short_description">{{ post.short_description }}</p>
+        <p class="date">Date: {{ post.date }}</p>
+    </div>
+{% endfor %}
+</div>
+
+{% endblock content %}

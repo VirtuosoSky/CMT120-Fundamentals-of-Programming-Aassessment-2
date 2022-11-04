@@ -1,0 +1,145 @@
+body{
+    margin: 0 auto;
+    font-family:helvetica, sans-serif;
+    font-size: 20px;
+    background-color: #fff7fe;
+}
+
+#top_navig_bar {
+    margin: 0 auto;
+    padding: 10px 20px;
+    height: 4.4vh;
+    background-color: black;
+    color: white;
+}
+
+#top_navig_bar a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+#footer {
+    padding: 5px 20px;
+    height: 25vh;
+    background-color: black;
+    color: white;
+}
+
+#footer div {
+    float: right;
+    margin-left: 5%;
+}
+
+#footer a {
+    color: white;
+    text-decoration: none;
+}
+
+#footer p {
+    font-size: 15px;
+}
+
+#content {
+    margin: 30px 0;
+    padding: 0 30px;
+    min-height: 55vh;
+}
+
+.register_error {
+    margin-left: 5px;
+    color: red;
+    font-size: 15px;
+}
+
+.each_post {
+    border: 10px solid rgb(221, 204, 204);
+    padding: 20px 100px 10px 50px;
+    line-height: 1.5;
+}
+
+.each_post a {
+    color: black;
+    text-decoration: none;
+}
+
+.each_post img {
+    float: left;
+    margin-right: 50px;
+}
+
+.short_description {
+    font-size: 20px;
+}
+
+.date {
+    font-size: 13px;
+}
+
+#post_body {
+    margin: 50px;
+}
+
+.individual_post {
+    margin-bottom: 20px;
+    border: 10px solid rgb(221, 204, 204);
+    padding: 20px 30px;
+    line-height: 2;
+}
+
+
+.individual_post img {
+    float: left;
+    margin: 40px 30px 0 0;
+}
+
+.individual_post .post_title {
+    text-align: center;
+}
+
+.detailed_description {
+    white-space: pre-wrap;
+}
+
+.comments {
+    border: 10px solid black;
+    padding: 10px;
+}
+
+.individual_comment {
+    border-top: solid black;
+    padding: 0 10px;
+}
+
+.individual_comment div {
+    display: inline-block;
+    color: black;
+    margin-right: 30px;
+}
+
+.reviewer_information {
+    vertical-align: top;
+}
+
+.rating_and_comments {
+    width: 70%;
+}
+
+.reviewer_name {
+    font-size: 20px;
+}
+
+.timestamp {
+    font-size: 15px;
+}
+
+.comment_form {
+    margin: 20px 0;
+    border: 10px solid grey;
+    padding: 0 10px;
+    font-size: 15px;
+}
+
+.comment_form a {
+    color: black;
+}
